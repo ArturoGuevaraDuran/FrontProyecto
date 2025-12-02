@@ -1,0 +1,241 @@
+// Animación para el campo condicional
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.conditional-field {
+  animation: fadeInDown 0.3s ease-out;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.section-registro {
+  width: 90%;
+  max-width: 980px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.body-registro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-top: 2.5rem;
+  gap: 2.2rem;
+  background: #fff;
+}
+
+.title-user {
+  font-size: 28px;
+  text-align: left;
+  font-family: Nexa-Bold;
+  letter-spacing: 2px;
+  color: #231F20;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+mat-form-field {
+  width: 100% !important;
+  height: auto !important;
+  text-align: left !important;
+  margin-left: 0;
+}
+
+//Para checkbox
+.checkbox-group-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-group-container .mat-label {
+  font-family: Nexa;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-item .checkbox-label-text {
+  font-family: Nexa;
+  font-size: 1rem;
+  color: #231F20;
+}
+
+::ng-deep .mat-mdc-checkbox.mat-accent {
+  --mdc-checkbox-selected-focus-icon-color: #0092B8;
+  --mdc-checkbox-selected-hover-icon-color: #0092B8;
+  --mdc-checkbox-selected-icon-color: #0092B8;
+  --mdc-checkbox-selected-pressed-icon-color: #0092B8;
+}
+
+// Estilo para el textarea
+::ng-deep .mat-form-field textarea {
+  min-height: 80px;
+}
+
+// Estilos para la fila de hora
+.time-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.time-row mat-form-field {
+  flex: 1;
+}
+
+::ng-deep .time-row .mat-form-field-suffix {
+  top: 0 !important;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+::ng-deep ngx-material-timepicker-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//Para la sección de botones
+.section-buttons {
+  width: 100%;
+  margin-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3rem;
+  gap: 1rem;
+}
+
+.btn-primary {
+  width: 208px;
+  height: 48px;
+  background-color: #0092B8 !important;
+  border-color: #0092B8 !important;
+  border-radius: 8px !important;
+  opacity: 1;
+  text-align: center;
+  font-family: Nexa-Bold;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  background-color: #017895 !important;
+  border-color: #017895 !important;
+}
+
+.btn-danger {
+  width: 208px;
+  height: 48px;
+  border-radius: 8px !important;
+  opacity: 1;
+  text-align: center;
+  font-family: Nexa-Bold;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+.mat-hint-margin {
+  margin-bottom: 1rem;
+}
+
+// Mensajes de error de validación
+.invalid-feedback {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: -2.2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.time-row .invalid-feedback {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+  Ajustes para el formulario en dispositivos móviles
+  ========================= */
+@media (max-width: 700px) {
+  .wrapper {
+    padding: 0.5rem;
+  }
+  .section-registro {
+    width: 100%;
+  }
+
+  .title-user {
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    white-space: normal;
+  }
+
+  mat-form-field {
+    width: 100% !important;
+    margin-left: 0;
+  }
+
+  // Estilos de la fila de hora en móvil
+  .time-row {
+    flex-direction: column;
+    gap: 2.2rem;
+    margin-bottom: -1rem;
+  }
+  .time-row .invalid-feedback {
+    margin-bottom: 1rem;
+  }
+
+  /* Ajuste para los botones */
+  .btn-primary,
+  .btn-danger {
+    width: 48%;
+    font-size: 14px;
+    height: 48px;
+  }
+
+  .section-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
